@@ -1,0 +1,118 @@
+:root {
+  --primary-bg: wheat;
+  --accent-blue: rgb(57, 57, 224);
+  --accent-teal: teal;
+  --danger-red: #cc0000;
+  --text-dark: #333;
+  --text-light: aliceblue;
+  --border-radius: 20px;
+  --gap: 1rem;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-display: fallback;
+  line-height: 1.6;
+  color: var(--text-dark);
+  padding: 2rem;
+  background-color: #f4f4f4; /* Subtle contrast for the wheat form */
+}
+
+form {
+  display: grid;
+  gap: var(--gap);
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  background: var(--primary-bg);
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--accent-blue);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Updated Input Style */
+#item {
+  color: var(--text-light);
+  background-color: var(--accent-blue);
+  border-radius: var(--border-radius);
+  padding: 0.8rem;
+  border: none;
+  font-family: inherit;
+}
+
+#item::placeholder {
+  color: rgba(240, 248, 255, 0.6); /* Aliceblue with transparency */
+}
+
+button {
+  font-family: inherit;
+  font-weight: bold;
+  background-color: var(--accent-teal);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+/* --- New Styles for the To-Do List --- */
+
+.header {
+  max-width: 500px;
+  margin: 2rem auto 1rem;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Style for the Delete Button */
+.delete-btn {
+  background-color: var(--danger-red);
+  padding: 5px 12px;
+  font-size: 0.8rem;
+}
+
+/* Strike-through text when completed */
+.list-item label:has(input:checked) {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
